@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import Header from "./layout/Header";
+import Home from "./pages/Home";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Header />
+      <Home />
+    </Container>
   );
 }
 
-export default App;
+const Container = styled.div`
+  width: min(1159px, 100%);
+  padding: 74px 24px;
+  margin: 0 auto;
+  @media (max-width: 548px) {
+    padding: 13px 16px;
+  }
+`;
